@@ -1,4 +1,4 @@
-# Mol---MnemonicOfLifeline
+# Mol-MnemonicOfLifeline
 ![image](https://github.com/alileylekoglu/Mol---MnemonicOfLifeline/assets/43744775/f70e75d7-1274-429f-9886-0e8a7d9fbf6a)
 
 ### Creating your own story
@@ -13,6 +13,7 @@ A journal or scrapbook where you jot down significant moments from your past, in
 # Integration of Solana
 ![image](https://github.com/alileylekoglu/Mol---MnemonicOfLifeline/assets/43744775/b48cd876-bf43-4131-9840-6f0e8679af2c)
 
+# Game View
 ![image](https://github.com/alileylekoglu/Mol---MnemonicOfLifeline/assets/43744775/eb85d2be-4bf2-49c0-bd28-56c994fbb279)
 
 ![image](https://github.com/alileylekoglu/Mol---MnemonicOfLifeline/assets/43744775/c0a9601b-52aa-4f80-bd19-f42d3202f308)
