@@ -7,12 +7,6 @@ This could involve writing a fictional novel, a personal memoir, or even embarki
 ### Remembering memories
 A journal or scrapbook where you jot down significant moments from your past, including photos, mementos, and feelings associated with each memory. This practice can help you cherish and reflect on your life journey.
 
-# Game Concept
-![image](https://github.com/alileylekoglu/Mol---MnemonicOfLifeline/assets/43744775/b5dfd9c6-bd9e-427f-b10b-cd2899c28a03)
-
-# Integration of Solana
-![image](https://github.com/alileylekoglu/Mol---MnemonicOfLifeline/assets/43744775/b48cd876-bf43-4131-9840-6f0e8679af2c)
-
 # Game View
 ![image](https://github.com/alileylekoglu/Mol---MnemonicOfLifeline/assets/43744775/eb85d2be-4bf2-49c0-bd28-56c994fbb279)
 
@@ -21,11 +15,7 @@ A journal or scrapbook where you jot down significant moments from your past, in
 # Demo Video link
 https://drive.google.com/file/d/1Dt9-bTDhu2FYqDO2HxLCdIH8qhifoIxX/view?usp=sharing
 
-# Gamifaction Elements 
-![image](https://github.com/alileylekoglu/Mol---MnemonicOfLifeline/assets/43744775/d1eb4816-032b-441b-845b-1a8e1c8b75a5)
+# Asset Need to Buy for using git code
+https://assetstore.unity.com/packages/vfx/shaders/volumetric-lights-2-234539
 
-# Business Modal
-![image](https://github.com/alileylekoglu/Mol---MnemonicOfLifeline/assets/43744775/78f0862b-821f-4207-9145-a556153d8506)
-
-# Future Business Plan
-![image](https://github.com/alileylekoglu/Mol---MnemonicOfLifeline/assets/43744775/b11aa589-1d1c-436b-b277-62c4fd72d268)
+https://assetstore.unity.com/packages/3d/environments/low-poly-mega-pack-polyworks-58821
