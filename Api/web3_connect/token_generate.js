@@ -5,16 +5,32 @@ import {
 	toMetaplexFile,
 	token,
 } from '@metaplex-foundation/js';
-import { Connection, clusterApiUrl, Keypair, PublicKey } from '@solana/web3.js';
-import * as fs from 'fs';
+import {
+	Connection,
+	clusterApiUrl,
+	Keypair,
+	PublicKey,
+	Transaction,
+} from '@solana/web3.js';
+import {
+	createMint,
+	getOrCreateAssociatedTokenAccount,
+	mintTo,
+	transfer,
+	createTransferInstruction,
+} from '@solana/spl-token';
 
+import * as fs from 'fs';
+let num = 1;
 async function SmartContract(jsonData) {
 	try {
-		let mintAddress = new PublicKey(jsonData.mintAddress);
+		const mintAddress = new PublicKey(jsonData.mintAddress);
 		console.log('Mint Address:', mintAddress.toBase58()); // Debugging: Print mint address
 		const QUICKNODE_RPC =
 			'https://delicate-sleek-wind.solana-devnet.discover.quiknode.pro/2bdca44cbde3506bdeb6fe4152e880d6ce4ba78f/';
-		const connection = new Connection(QUICKNODE_RPC);
+		const connection = new Connection(QUICKNODE_RPC, {
+			commitment: 'confirmed',
+		});
 		await connection
 			.getVersion()
 			.then((response) => console.log('Solana Version:', response)); // Debugging: Print Solana version
@@ -51,27 +67,55 @@ async function SmartContract(jsonData) {
 			description: 'LightBox Entertainment',
 			image: file,
 		});
-		console.log('Metadata URI:', uri); // Debugging: Print metadata URI
-
+		let NftName = 'LightHouse #' + num;
+		num = num + 1;
 		const { nft } = await METAPLEX.nfts().create(
 			{
 				uri: uri,
-				name: 'My First NFT',
+				name: NftName,
 				sellerFeeBasisPoints: 500, // Represents 5.00%.
 			},
 			{ commitment: 'finalized' },
 		);
 		console.log(nft);
-		let nftAddress = new PublicKey(nft.token.address.toBase58());
-		console.log('NFT Address:', nftAddress.toBase58()); // Debugging: Print NFT address
+		const mint = nft.mint.address;
+		console.log('Wallet Address:', wallet.publicKey);
+		console.log('Wallet Address:', mintAddress);
+		console.log('NFT Address:', mint); // Debugging: Print NFT address
 		console.log('Token Created');
-		await METAPLEX.nfts().transfer({
-			nftOrSft: nftAddress,
-			authority: wallet,
-			fromOwner: publicKey,
-			toOwner: mintAddress,
-			amount: token(1),
-		});
+		// await METAPLEX.nfts().transfer({
+		// 	nftOrSft: nftAddress,
+		// 	authority: wallet,
+		// 	fromOwner: publicKey,
+		// 	toOwner: mintAddress,
+		// 	amount: token(1),
+		// });
+		let commitment = 'finalized';
+		const fromTokenAccount = await getOrCreateAssociatedTokenAccount(
+			connection,
+			wallet,
+			mint,
+			wallet.publicKey,
+			commitment,
+		);
+		const toTokenAccount = await getOrCreateAssociatedTokenAccount(
+			connection,
+			wallet,
+			mint,
+			mintAddress,
+			commitment,
+		);
+
+		let signature = await transfer(
+			connection,
+			wallet,
+			fromTokenAccount.address,
+			toTokenAccount.address,
+			wallet.publicKey,
+			1,
+			[],
+		);
+
 		console.log('Token Sent');
 	} catch (error) {
 		console.error('Error in minting NFT:', error); // Debugging: Print detailed error message
