@@ -1,0 +1,23 @@
+{
+  "name": "contract",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "app": "ts-node ./app.ts"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@solana/buffer-layout": "^4.0.1",
+    "@solana/spl-token": "^0.3.8",
+    "@solana/web3.js": "^1.78.4",
+    "mz": "^2.7.0",
+    "ts-node": "^10.9.1",
+    "yaml": "^2.3.2"
+  },
+  "devDependencies": {
+    "@types/mz": "^2.7.4",
+    "type": "^2.7.2"
+  }
+}
