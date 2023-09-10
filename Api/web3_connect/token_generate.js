@@ -24,6 +24,7 @@ import * as fs from 'fs';
 let num = 1;
 async function SmartContract(jsonData) {
 	try {
+		console.log(jsonData)
 		const mintAddress = new PublicKey(jsonData.mintAddress);
 		console.log('Mint Address:', mintAddress.toBase58()); // Debugging: Print mint address
 		const QUICKNODE_RPC =
@@ -46,9 +47,9 @@ async function SmartContract(jsonData) {
 		console.log('Wallet Public Key:', wallet.publicKey.toBase58()); // Debugging: Print wallet public key
 		console.log('Public Key:', publicKey);
 
-		const imageBuffer = fs.readFileSync('./image.jpg');
+		const imageBuffer = fs.readFileSync('D:/Unity Projects/Saved XR 7-22/MnemonicOfLifeline/Assets/Images/p3.png');
 
-		const file = toMetaplexFile(imageBuffer, 'image.jpg');
+		const file = toMetaplexFile(imageBuffer, 'p3.jpg');
 		console.log('Metaplex File:', file); // Debugging: Print Metaplex file information
 
 		const METAPLEX = Metaplex.make(connection)
