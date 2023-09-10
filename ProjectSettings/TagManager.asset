@@ -10,6 +10,7 @@ TagManager:
   - MiniWorldCamera
   - Water
   - Size
+  - door
   layers:
   - Default
   - TransparentFX
