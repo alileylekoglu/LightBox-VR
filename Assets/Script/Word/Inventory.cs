@@ -9,7 +9,7 @@ public class Inventory : MonoBehaviour
     {
         for (char c = 'a'; c <= 'z'; c++)
         {
-            letters[c] = 10;  // Initialize each letter with a count of 10
+            letters[c] = 5;  // Initialize each letter with a count of 10
         }
     }
 

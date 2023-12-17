@@ -1,7 +1,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using TMPro;  // Import the TextMesh Pro namespace
+using TMPro;  
+using System.IO;
 
 public class InventoryManager : MonoBehaviour
 {
@@ -58,11 +59,11 @@ public class InventoryManager : MonoBehaviour
         }
         else
         {
-            ShowInsufficientLettersNotification();
+            ShowInsufficientLettersNotification(word);  // Pass the word for a custom message
         }
     }
 
-    private void ShowInsufficientLettersNotification()
+    private void ShowInsufficientLettersNotification(string attemptedWord = "")
     {
         if (insufficientLettersPrefab == null)
         {
@@ -73,9 +74,17 @@ public class InventoryManager : MonoBehaviour
         // Instantiate the prefab to show the notification
         var notification = Instantiate(insufficientLettersPrefab, transform);
 
-        // Optional: Destroy the notification after a few seconds
+        // Optionally, customize the message based on the attempted word
+        TextMeshProUGUI notificationText = notification.GetComponentInChildren<TextMeshProUGUI>();
+        if (notificationText != null && !string.IsNullOrEmpty(attemptedWord))
+        {
+            notificationText.text = $"You don't have enough letters to form '{attemptedWord}'.";
+        }
+
+        // Destroy the notification after a few seconds
         Destroy(notification, 3f);
     }
+
 
 
 

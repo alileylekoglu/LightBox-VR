@@ -5,15 +5,12 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scene/MainScreen.unity
     guid: 83068fae9a8bc554892306ed8c7f2aa2
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scene/_UnderwaterTemple_Demo.unity
     guid: da520a7f6dc7ee8449bdb10374634609
-  - enabled: 1
-    path: Assets/Samples/Solana SDK/0.1.9/Sample Wallet/Solana Wallet/Scenes/wallet_scene.unity
-    guid: 8b3834b526b1d9f4687af110b68aeda9
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: b82b3514aa9fd8b4ea7f0709306396f7,
       type: 2}
